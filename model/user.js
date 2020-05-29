@@ -2,7 +2,6 @@
 const mongoose = require("mongoose");
 
 const userSchema =  mongoose.Schema({
-    "_id": mongoose.Schema.Types.ObjectId,
     "firstName": String,
     "lastName": String,
     "email": String,
@@ -14,9 +13,14 @@ const userSchema =  mongoose.Schema({
     "municipio": String,
     "postalCode": String,
     "checkboxGroup": Array,
+    "schedule": Array,
+    "payMethod": Array,
+    "specialServices": Array,
     "description": String,
     "admin": Boolean,
-    "active": Boolean 
+    "active": Boolean,
+    "job": Boolean,
+    "image": String
 });
-const userModel = mongoose.model("servicios", userSchema);
+const userModel = mongoose.model("profesionistas", userSchema);
 module.exports = userModel;
