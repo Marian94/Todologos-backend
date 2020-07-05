@@ -2,7 +2,7 @@ const User = require('../model/user');
 const Service = require('../model/services');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const jwtKey  = process.env.jwtKey  || "cloudjwtKey ";
+const jwtKey  = process.env.jwtKey  || "cloudjwtKey";
 
 
 //ADD NEW USER
