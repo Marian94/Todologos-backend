@@ -50,14 +50,14 @@ async function postNewUser(req, pass) {
     const user = new User({
         "firstName": req.body.firstName,
         "lastName": req.body.lastName,
-        "email": req.body.email,
+        //"email": req.body.email,
         "celular": req.body.celular,
         "telefono": telefono,
-        "password": pass,
+        //"password": pass,
         "address1": req.body.address1,
         "colonia": req.body.colonia,
         "municipio": req.body.municipio,
-        "postalCode": req.body.postalCode,
+        //"postalCode": req.body.postalCode,
         "checkboxGroup": checkboxGroup,
         "schedule": schedule,
         "payMethod": payMethod,
@@ -82,18 +82,18 @@ async function postNewUser(req, pass) {
 }
 async function createUser(req, res) {
     //Validar si un usuario con el mismo email no existe ya
-    const valid_email = await findDupUser(req.body.email);
-    if(!valid_email.success) {
-        throw new Error(valid_email.message);
-    }
-    //Hashear y salar la contraseña
-    const saltRounds = 10;
-    const securePass = await hashAndSalt(req.body.password, saltRounds);
-    if(!securePass.success) {
-        throw new Error(securePass) ;
-    }
-    //Guardar el usuario en la DB
-    const postResult = await postNewUser(req, securePass.pass);
+    // const valid_email = await findDupUser(req.body.email);
+    // if(!valid_email.success) {
+    //     throw new Error(valid_email.message);
+    // }
+    // //Hashear y salar la contraseña
+    // const saltRounds = 10;
+    // const securePass = await hashAndSalt(req.body.password, saltRounds);
+    // if(!securePass.success) {
+    //     throw new Error(securePass) ;
+    // }
+    // //Guardar el usuario en la DB
+    const postResult = await postNewUser(req, "");
     if(!postResult.success) {
         throw new Error(postResult);
     }
