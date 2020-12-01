@@ -1,6 +1,6 @@
 # FSJS-PF-Back
 
-For innovation swith to "innovation" branch and isntall the dependencies
+For innovation switch to "innovation" branch and isntall the dependencies
 
 ### `npm install`
 
